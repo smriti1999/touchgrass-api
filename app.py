@@ -59,3 +59,8 @@ async def predict(file: UploadFile = File(...)):
         "confidence": round(confidence, 4),
         "model": MODEL_NAME
     })
+
+# === Health Check Endpoint ===
+@app.get("/ping")
+def ping():
+    return {"status": "ok"}
