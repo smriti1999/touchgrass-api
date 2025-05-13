@@ -61,6 +61,7 @@ async def predict(file: UploadFile = File(...)):
     })
 
 # === Health Check Endpoint ===
-@app.get("/ping")
+@app.get("/ping", include_in_schema=False)
+@app.head("/ping", include_in_schema=False)
 def ping():
     return {"status": "ok"}
